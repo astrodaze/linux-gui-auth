@@ -16,7 +16,7 @@ Fix: This modified file has extra rules allowing the user to authenticate using 
 3. Add it to the end of /var/lib/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.pkla
 
 
-[DESCRIPTION OF RULE]
+[DESCRIPTION OF RULE]  
 Identity=unix-group:admin;unix-group:sudo  
 Action=ID_HERE  
 ResultActive=yes  
