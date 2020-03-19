@@ -7,7 +7,7 @@ Fix: This modified file has extra rules allowing the user to authenticate using 
 
 # Modify polkit rules
 1. sudo su
-2. vi  /var/lib/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.pkla\
+2. vi  /var/lib/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.pkla  
 3. Copy and paste the pkla file or create your own rules
 
 # Creating Additional Rules
