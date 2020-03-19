@@ -1,5 +1,5 @@
 # Domain sudo user authenticating with the GUI
-Meant for domain bound linux user machines. 
+Meant for domain bound linux user machines. Tested on Ubuntu 16.04  
 
 Issue: Domain user cannot authenticate on a domain bound computer using the gui but has sudo access and can authenticate in the terminal
 
