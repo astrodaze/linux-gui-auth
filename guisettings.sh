@@ -22,25 +22,24 @@ fi
 }
 
 function networksettings(){
-if [ ! -f "$NETWORK_SETTINGS" ] ; then 
+if [ -z `grep NetworkManager ${NETWORK_SETTINGS}` ] ; then 
     echo "adding network settings..."
-    echo
-    "
+    tee -a  $NETWORK_SETTINGS > /dev/null << EOT
 [Changing system-wide NetworkManager connections]
 Identity:unix-group:*
 Action=org.freedesktop.NetworkManager.settings.modify.system
 ResultAny=no
 ResultInactive=no
-ResultActive=yes" > $NETWORK_SETTINGS 
+ResultActive=yes
+EOT
 else 
     echo "network settings already configured.. moving on.."
 fi
 }
 
 function addRules(){
-    echo
-    "
-    [Allow user to change user accounts]
+    tee -a  $local_rule > /dev/null << EOT
+[Allow user to change user accounts]
 Identity=unix-group:admin;unix-group:sudo
 Action=org.gnome.controlcenter.user-accounts.administration
 ResultActive=yes
@@ -58,7 +57,8 @@ ResultActive=yes
 [Allow user to install using snap]
 Identity=unix-group:admin;unix-group:sudo
 Action=io.snapcraft.snapd.manage;io.snapcraft.snapd.login;io.snapcraft.snapd.manage-interfaces
-ResultActive=yes" > $local_rule
+ResultActive=yes
+EOT
 }
 
 
