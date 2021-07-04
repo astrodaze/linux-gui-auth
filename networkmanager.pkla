@@ -1,0 +1,6 @@
+[Changing system-wide NetworkManager connections]
+Identity:unix-group:*
+Action=org.freedesktop.NetworkManager.settings.modify.system
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
